@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/login_style.css') }}">
+{% endblock %}
+
+{% block title %}Se connecter{% endblock %}
+
+{% block body %}
+   <div class="container">
+       <h3 class="title">Se connecter</h3>
+
+       <div class="row">
+           <div class="col-12">
+               <form method="post">
+                   {% if error %}
+                       <div class="alert alert-danger">
+                           {{ error.messageKey| trans(error.messagedata, 'security') }}
+                       </div>
+                   {% endif %}
+
+                   {# {% if app.user |default('undefined') %}
+                      <div class="mb-3">
+                          You are logged in as {{ app.user.email }}, <a href="{{ path('app_logout') }}">Logout</a>
+                      </div>
+                  {% endif %}
+                   #}
+
+                   <label for="inputUsername">Votre email</label>
+                   <input type="text" value="{{ last_username }}" placeholder="exemple@contact.fr" name="username" id="inputUsername" class="form-control" required autofocus>
+                   <label for="inputPassword">Votre mot de passe</label>
+                   <input type="password" name="password" id="inputPassword" placeholder="Votre mot de passe" class="form-control" required>
+
+                   <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                   {#
+                       Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                       See https://symfony.com/doc/current/security/remember_me.html
+                       <div class="checkbox">
+                           <label>
+                               <input type="checkbox" name="_remember_me"> Remember me
+                           </label>
+                       </div>
+                   #}
+                   <button class="btn btn-primary" type="submit" >Se connecter </button>
+
+               </form>
+           </div>
+       </div>
+   </div>
+{% endblock %}
