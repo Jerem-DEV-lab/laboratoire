@@ -2,12 +2,12 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Products;
+use App\Entity\Categorie;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 use Faker\Factory;
-class ProductsFixtures extends Fixture
+class CategoriesFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
@@ -15,13 +15,11 @@ class ProductsFixtures extends Fixture
         $faker = Factory::create('fr_FR');
         for ($i = 0; $i < 10; $i++)
         {
-            $product = new Products();
-            $product
+            $categories = new Categorie();
+            $categories
                 ->setName($faker->words(3, true))
-                ->setDescription($faker->sentences(3, true))
-                ->setPrice($faker->numberBetween(10, 50))
             ;
-            $manager->persist($product);
+            $manager->persist($categories);
         }
         $manager->flush();
     }
