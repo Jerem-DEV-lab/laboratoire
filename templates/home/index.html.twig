@@ -1,4 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{% endblock %}
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                   <div class="hero_categories">
+                        <div class="hero_categories_all">
+                           <i class="fa fa-bars"></i> <span>Toutes nos catégories</span>
+                        </div>
+                        <ul>
+                        {% for categorie in categories %}
+                           <li>{{ categorie.name }}</li>
+                        {% endfor %}
+                        </ul>
+                   </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero_search">
+                        <div class="hero-search-categorie">
+                            Toutes les catégories
+                            <span class="arrow_carrot-down"></span>
+                        </div>
+                        <div class="hero-search_form">
+                            <form action="#">
+                                <input type="text" placeholder="Que recherchez-vous ?">
+                                <button class="site-btn btn btn-success" type="submit">RECHERCHER</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock%}
