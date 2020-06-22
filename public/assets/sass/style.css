@@ -1,3 +1,7 @@
+* {
+  font-family: "Cairo", sans-serif;
+}
+
 header .header_top-bar {
   background-color: #f5f5f5;
 }
@@ -42,6 +46,19 @@ ul {
   color: #1C1C1C;
 }
 
+.header_logo {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.header_logo a {
+  display: inline-block;
+}
+
+.header_logo img {
+  height: 100px;
+}
+
 .header_card {
   text-align: right;
   padding: 24px 0;
@@ -73,13 +90,113 @@ nav.header_menu li a {
   color: #1C1C1C;
 }
 
-.hero-search_form input {
+.hero_search {
+  margin-bottom: 30px;
+}
+.hero_search .hero-search_form {
+  width: 610px;
+  height: 50px;
+  border: 1px solid #ebebeb;
+  position: relative;
+  float: left;
+  margin-bottom: 30px;
+}
+.hero_search form .hero-search-categorie {
+  width: 30%;
+  float: left;
+  font-size: 16px;
+  color: #1C1C1C;
+  font-weight: 700;
+  padding-left: 18px;
+  padding-top: 11px;
+  position: relative;
+}
+.hero_search form input {
   width: 70%;
   border: none;
   height: 48px;
   font-size: 16px;
   color: #b2b2b2;
   padding-left: 20px;
+}
+.hero_search form button {
+  position: absolute;
+  right: 0;
+  top: -1px;
+  height: 50px;
+}
+
+.hero-search_phone {
+  float: right;
+}
+.hero-search_phone .hero-search-phone_icon {
+  font-size: 18px;
+  color: #7fad39;
+  height: 50px;
+  width: 50px;
+  background: #f5f5f5;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  float: left;
+  margin-right: 15px;
+  margin-left: 10px;
+}
+
+.hero-search_phone_text {
+  float: right;
+  overflow: hidden;
+}
+.hero-search_phone_text h5 {
+  color: #1C1C1C;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.hero-search_phone_text span {
+  font-size: 14px;
+  color: #6f6f6f;
+}
+
+.set-bg {
+  background-image: url("../images/hero-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.hero_items {
+  display: flex;
+  height: 431px;
+  width: 100%;
+  align-items: center;
+  padding-left: 75px;
+}
+
+.hero-items_text {
+  width: 50%;
+}
+.hero-items_text span {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #7fad39;
+}
+.hero-items_text h2 {
+  font-size: 46px;
+  color: #252525;
+  line-height: 52px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.hero-items_text .hero-items_text p {
+  margin-bottom: 35px;
+}
+.hero-items_text p {
+  font-size: 16px;
+  color: #6f6f6f;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 0 0 15px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

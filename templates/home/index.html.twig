@@ -6,27 +6,47 @@
             <div class="row">
                 <div class="col-lg-3">
                    <div class="hero_categories">
-                        <div class="hero_categories_all">
-                           <i class="fa fa-bars"></i> <span>Toutes nos catégories</span>
-                        </div>
-                        <ul>
-                        {% for categorie in categories %}
-                           <li>{{ categorie.name }}</li>
-                        {% endfor %}
-                        </ul>
+                       <div class="hero_categories_all">
+                           <button class="btn btn-success dropdown-toggle p-3" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <i class="fa fa-bars"></i> <span>Nos différentes catégories</span>
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                               {% for categorie in categories %}
+                                   <button class="dropdown-item" type="button">{{ categorie.name }}</button>
+                               {% endfor %}
+                           </div>
+                       </div>
                    </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-9 mt-1">
                     <div class="hero_search">
-                        <div class="hero-search-categorie">
-                            Toutes les catégories
-                            <span class="arrow_carrot-down"></span>
-                        </div>
                         <div class="hero-search_form">
                             <form action="#">
+                                <div class="hero-search-categorie">
+                                    Toutes les catégories
+                                    <span class="arrow_carrot-down"></span>
+                                </div>
                                 <input type="text" placeholder="Que recherchez-vous ?">
                                 <button class="site-btn btn btn-success" type="submit">RECHERCHER</button>
                             </form>
+                        </div>
+                        <div class="hero-search_phone">
+                            <div class="hero-search-phone_icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero-search_phone_text">
+                                <h5>06.06.06.06.06</h5>
+                                <span>Ouvert du ... </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero_items set-bg">
+                        {# TODO: REFAIRE UNE BANNIERE#}
+                        <div class="hero-items_text">
+                            <span>lorem</span>
+                            <h2>Title</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, at blanditiis culpa dolore doloribus</p>
+                            <button class="btn btn-success m-auto">Boutique</button>
                         </div>
                     </div>
                 </div>
