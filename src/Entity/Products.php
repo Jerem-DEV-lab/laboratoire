@@ -32,6 +32,11 @@ class Products
      */
     private $description;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="products")
+     */
+    private $categorie;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Products
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?Categorie
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?Categorie $categorie): self
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }
