@@ -28,14 +28,9 @@ class Delivery
     private $meeting;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $checkinTime;
-
-    /**
-     * @ORM\Column(type="datetime_immutable")
-     */
-    private $datedelivery;
 
     /**
      * @ORM\ManyToOne(targetEntity=CategoryDelivery::class, inversedBy="delivery")
@@ -71,26 +66,14 @@ class Delivery
         return $this;
     }
 
-    public function getCheckinTime(): ?\DateTimeImmutable
+    public function getCheckinTime(): ?\DateTime
     {
         return $this->checkinTime;
     }
 
-    public function setCheckinTime(\DateTimeImmutable $checkinTime): self
+    public function setCheckinTime(\DateTime $checkinTime): self
     {
         $this->checkinTime = $checkinTime;
-
-        return $this;
-    }
-
-    public function getDatedelivery(): ?\DateTimeImmutable
-    {
-        return $this->datedelivery;
-    }
-
-    public function setDatedelivery(\DateTimeImmutable $datedelivery): self
-    {
-        $this->datedelivery = $datedelivery;
 
         return $this;
     }

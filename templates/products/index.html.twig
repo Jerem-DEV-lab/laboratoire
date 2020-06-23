@@ -8,7 +8,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>Image</th>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Description</th>
@@ -18,7 +18,13 @@
         <tbody>
         {% for product in products %}
             <tr>
-                <td>{{ product.id }}</td>
+                <td>
+                    <div class="image">
+                        {% if product.filename %}
+                            <img src="{{ vich_uploader_asset(product, 'imageFile')| imagine_filter('thumb') }}" style="width: 100%; height: auto">
+                        {% endif %}
+                    </div>
+                </td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.price }}</td>
                 <td>{{ product.description }}</td>

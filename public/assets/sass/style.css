@@ -269,6 +269,44 @@ nav.header_menu li a {
   margin: 0 0 15px 0;
 }
 
+.advertisement {
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.section-title h2 {
+  position: relative;
+}
+
+.section-title::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  width: 80px;
+  background: #7fad39;
+  content: "";
+  margin: 0 auto;
+}
+
+.section-advertisement-delivery .row {
+  padding: 10px;
+  border: solid 2px #7fad39;
+}
+.section-advertisement-delivery .delivery_icon {
+  font-size: 35px;
+  text-align: center;
+  color: #1c1c1c;
+}
+.section-advertisement-delivery h4 {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+}
+.section-advertisement-delivery p {
+  text-align: center;
+}
+
 .footer {
   background-color: #f5f5f5;
   padding-bottom: 0;

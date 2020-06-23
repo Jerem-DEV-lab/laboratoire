@@ -54,6 +54,41 @@
         </div>
     </section>
 
+    <section class="section-advertisement-delivery">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="delivery_icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="delivery_text">
+                        <h4>Livraison par tournée</h4>
+                        <p>L'équipe du laboratoire parcours la France pour vos livraison</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="delivery_icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="delivery_text">
+                        <h4>Possibilitées d'envoi avec FranceExpress</h4>
+                        <p>Les envois à domicile nécessite des frais supplémentaires (<a href="#" class="text-muted">voir conditions d'envoi</a>)<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="delivery_icon">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <div class="delivery_text">
+                        <h4>Respect de la chaîne du froid</h4>
+                        <p>Lors d'une livraison par FranceExpress pour les rongeurs congelées de la carbo-glace vous sera facturer pour respecter la chaîne du froid  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="advertisement">
         <div class="container">
             <div class="row">
@@ -62,23 +97,20 @@
                         <h2>Notre prochaine tournée</h2>
                     </div>
                     <div class="advertisement_delivery">
-                        <table class="table">
+                        <table class="table table-borderless">
                             <thead>
-                            <tr>
-                                <th>Ville</th>
-                                <th>Lieu de rendez-vous</th>
-                                <th>Heure d'arrivée</th>
+                            <tr class="">
+                                <th scope="col">Ville</th>
+                                <th scope="col">Lieu de rendez-vous</th>
+                                <th scope="col">Heure d'arrivée</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% for product in products %}
+                            {% for delivery in delivery %}
                                 <tr>
-                                    <td>{{ product.name }}</td>
-                                    <td>{{ product.price }}</td>
-                                    <td>
-                                        <a href="{{ path('products_show', {'id': product.id}) }}">show</a>
-                                        <a href="{{ path('products_edit', {'id': product.id}) }}">edit</a>
-                                    </td>
+                                    <td>{{ delivery.city }}</td>
+                                    <td>{{ delivery.meeting }}</td>
+                                    <td>{{ delivery.checkinTime|date('H:h') }}</td>
                                 </tr>
                             {% else %}
                                 <tr>

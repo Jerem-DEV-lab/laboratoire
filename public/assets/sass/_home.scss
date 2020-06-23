@@ -199,20 +199,44 @@ nav.header_menu {
   }
 
 }
-
-.footer{
-  background-color: $background;
-  padding-bottom: 0;
-  padding-top: 70px;
+.advertisement{
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+.section-title h2{
+  position: relative;
 }
 
-.footer_about ul {
-  padding: 0;
-  li{
-    padding:  5px 0;
+.section-title::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    width: 80px;
+    background: #7fad39;
+    content: "";
+    margin: 0 auto;
   }
-}
 
-.footer-copyright_text{
-  padding: 10px 0;
+.section-advertisement-delivery{
+  .row{
+    padding: 10px;
+    border: solid 2px $primary-color;
+  }
+  .delivery_icon{
+    font-size: 35px;
+    text-align: center;
+    color: $normal-color;
+  }
+
+  h4{
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  p{
+    text-align: center;
+  }
+
 }

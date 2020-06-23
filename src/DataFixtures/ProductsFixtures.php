@@ -3,11 +3,14 @@
 namespace App\DataFixtures;
 
 use App\Entity\Categorie;
+use App\Entity\CategoryDelivery;
 use App\Entity\Products;
+use App\Entity\Delivery;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 use Faker\Factory;
+
 class ProductsFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
@@ -34,6 +37,25 @@ class ProductsFixtures extends Fixture
             $manager->persist($product);
         }
 
+        for ($k = 0; $k < 10; $k++ )
+        {
+            $delivery = new Delivery();
+            $delivery
+                ->setCity($faker->city)
+                ->setCheckinTime($faker->dateTime($max = 'now', $timezone = null))
+                ->setMeeting($faker->city)
+            ;
+            $manager->persist($delivery);
+        }
+
+        for ($a = 0; $a < 1; $a++)
+        {
+            $categoryDelivery = new CategoryDelivery();
+            $categoryDelivery
+                ->setTitle('Livraison n° ' . $a )
+            ;
+            $manager->persist($categoryDelivery);
+        }
         $manager->flush();
     }
     //TODO: FIXTURES DELIVERY DATA
